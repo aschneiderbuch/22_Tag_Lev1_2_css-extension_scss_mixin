@@ -1,0 +1,179 @@
+/*
+* variables 
+*/
+$h1Undh2__fontSize: 1rem;
+$marginTop: 1rem;
+$marginBottom: 1rem;
+$margin :1rem;
+$padding :1rem;
+
+
+/* 
+* mixin 
+ */
+
+@mixin displayFlexUndJustify {
+    display: flex;
+    justify-content: center;
+}
+
+
+@mixin displayFlexUndJustifyUndFlexFlowUndAlign {
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+    * {
+        margin: 0;
+        border: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .header {
+        height: 6rem;
+        text-align: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        padding: 1.5rem;
+
+
+
+        h1,
+        h2 {
+            font-size: $h1Undh2__fontSize;
+        }
+    }
+
+    @mixin navStyle {
+        margin-top: $marginTop;
+        margin-bottom: $marginBottom;
+        @include displayFlexUndJustify;
+        background-color: rgba(0, 0, 255, 0.514);
+    }
+
+
+
+    .nav_links {
+        margin-top: $marginTop;
+        @include displayFlexUndJustify;
+        margin-bottom: $marginBottom;
+        background-color: rgba(0, 0, 255, 0.514);
+
+
+        li {
+            padding: $padding;
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    }
+
+
+    .main {
+        @include displayFlexUndJustifyUndFlexFlowUndAlign;
+
+    }
+
+    .section_text {
+        margin: $margin;
+
+
+        h3 {
+            text-align: center;
+        }
+    }
+
+
+
+    .section_images {
+        margin: $margin;
+
+        @include displayFlexUndJustifyUndFlexFlowUndAlign;
+
+
+
+
+        img {
+            height: 12rem;
+            width: 18rem;
+            margin: 0 0.5rem 1rem 0.5rem
+        }
+    }
+
+    .aside {
+
+        @include displayFlexUndJustifyUndFlexFlowUndAlign;
+
+        margin: $margin;
+
+        .first_aside,
+        .second_aside,
+        .third_aside,
+        .fourth_aside {
+            border: 0.2rem solid rgba(0, 0, 255, 0.678);
+            padding: $padding;
+            margin-bottom: $marginBottom;
+        }
+    }
+
+
+
+
+
+
+
+
+    .footer {
+        height: 5rem;
+        margin-top: $marginTop;
+        background-color: rgba(0, 0, 255, 0.678);
+
+        .footer_links {
+            @include displayFlexUndJustify;
+            
+            
+            margin-bottom: $marginBottom;
+
+
+            li {
+                padding: $padding;
+                list-style: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+        .section_images {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .section_text {
+            width: 70%;
+        }
+
+        .aside {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .first_aside,
+        .second_aside,
+        .third_aside,
+        .fourth_aside {
+            width: 45%;
+            margin: 0.5rem;
+        }
+    }
